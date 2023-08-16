@@ -1,0 +1,31 @@
+app:
+  name: f-kernel
+
+logging:
+  level:
+    root: WARN
+    org.springframework.web: INFO
+    com.jkqj: DEBUG
+
+canal:
+  host: 127.0.0.1
+  port: 11111
+  destination: example
+  username: canal
+  password: canal
+  subscribes:
+    - jkqj_all_new_qa.user
+    - jkqj_galaxy_qa.resume_index
+    - bot_boss.resume
+    - jkqj_all_new_qa.candidate
+    - jkqj_all_new_qa.interview_proc
+    - jkqj_all_new_qa.ding_callback
+
+mq:
+  nats:
+    pool-size: 10
+    servers:
+      - nats://192.168.0.1:4222
+    connection-name: jkqj-mq
+    username: jkqj_mq
+    password: cswjggljrmpypwfccarzpjxG-urepqldkhecvnzxzmngotaqs-bkwdvjgipruectqcowoqb6nj
